@@ -4,3 +4,10 @@
 первого множества. m - кол-во элементов второго множества. Затем пользователь вводит сами элементы множеств.
 """
 
+from random import randint
+NSet = set(randint(1, 20) for i in range(int(input('Введите кол-во элементов первого множества: '))))
+print(NSet)
+MSet = set(randint(1, 20) for i in range(int(input('Введите кол-во элементов второго множества: '))))
+print(MSet)
+SSet = sorted(NSet.intersection(MSet))
+print(*SSet)
