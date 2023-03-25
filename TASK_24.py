@@ -6,3 +6,16 @@
 перед некоторым кустом, собирает ягоды с этого куста и с двух соседних с ним. Напишите программу для нахождения максимального числа ягод, 
 которое может собрать за один заход собирающий модуль, находясь перед некоторым кустом заданной во входном файле грядки.
 """
+
+from random import randint
+Berries = list(randint(1, 999) for i in range(int(input('Введите кол-во кустов: '))))
+print(Berries)
+a = int(input('Введите № куста: '))
+Quantity = 0
+if a == 1:
+    Quantity = Berries[0] + Berries[1] + Berries[-1]
+elif a == len(Berries):
+    Quantity = Berries[-2] + Berries[-1] + Berries[0]
+else:
+    Quantity = Berries[a-1] + Berries[a-2] + Berries[a]
+print(Quantity, 'ягод')
